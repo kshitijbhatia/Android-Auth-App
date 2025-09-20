@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Auth App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email_hint_text">Enter Email</string>
+    <string name="password_hint_text">Enter Password</string>
+    <string name="name_hint_txt">Enter Name</string>
+    <string name="login_text">Login</string>
+    <string name="dont_have_account_txt">Don\'t have an account?</string>
+    <string name="already_have_account_txt">Already have an account?</string>
+    <string name="register_txt">Register</string>
+</resources>
