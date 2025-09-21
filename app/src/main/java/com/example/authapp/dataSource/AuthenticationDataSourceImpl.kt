@@ -1,5 +1,6 @@
 package com.example.authapp.dataSource
 
+import android.util.Log
 import com.example.authapp.model.User
 import com.example.authapp.utils.NetworkResult
 import com.google.firebase.auth.AuthResult

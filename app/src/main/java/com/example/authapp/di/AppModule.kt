@@ -3,6 +3,7 @@ package com.example.authapp.di
 import com.example.authapp.dataSource.AuthenticationDataSource
 import com.example.authapp.dataSource.AuthenticationDataSourceImpl
 import com.example.authapp.dataSource.AuthenticationRepo
+import com.example.authapp.usecase.LoginUseCase
 import com.example.authapp.usecase.RegisterUseCase
 import com.google.firebase.auth.FirebaseAuth
 import dagger.Module
@@ -35,5 +36,11 @@ object AppModule {
     @Singleton
     fun providesRegisterUseCase(authenticationRepo: AuthenticationRepo): RegisterUseCase {
         return RegisterUseCase(authenticationRepo)
+    }
+
+    @Provides
+    @Singleton
+    fun providesLoginUseCase(authenticationRepo: AuthenticationRepo): LoginUseCase {
+        return LoginUseCase(authenticationRepo)
     }
 }
