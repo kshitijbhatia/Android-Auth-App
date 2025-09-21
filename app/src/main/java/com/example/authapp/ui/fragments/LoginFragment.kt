@@ -49,7 +49,6 @@ class LoginFragment : Fragment() {
             loginButton.setOnClickListener { view ->
                 val email = emailInput.text.toString()
                 val password = passwordInput.text.toString()
-                Log.d("response", "inside setOnClickListener 1")
                 viewModel.login(email, password)
             }
 
@@ -64,21 +63,17 @@ class LoginFragment : Fragment() {
     }
 
     fun initObserver() {
-        Log.d("response", "inside initObserver 1")
         viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main) {
-            Log.d("response", "inside initObserver 2")
             viewModel.uiState.collect { state ->
                 when(state) {
                     is NetworkResult.Initial -> {
 
                     }
                     is NetworkResult.Success -> {
-                        Log.d("response", "inside initObserver 3")
                         val intent = Intent(context, HomeActivity::class.java)
                         startActivity(intent)
                     }
                     is NetworkResult.Failure -> {
-                        Log.d("response", "inside initObserver 4")
                         Toast.makeText(context, state.error, Toast.LENGTH_LONG).show()
                     }
                 }

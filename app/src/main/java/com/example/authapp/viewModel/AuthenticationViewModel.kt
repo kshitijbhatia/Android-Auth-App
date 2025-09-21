@@ -25,10 +25,8 @@ class AuthenticationViewModel @Inject constructor(
 
     fun login(email: String, password: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            Log.d("response", "inside login 1")
             val user = User(email = email)
             val response = loginUseCase.invoke(user, password)
-            Log.d("response", "inside login 2: ${response is NetworkResult.Failure} ${response is NetworkResult.Success}")
             _uiState.value = response
         }
     }
