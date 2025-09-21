@@ -49,12 +49,10 @@ class RegisterFragment : Fragment() {
                 val name = nameInput.text.toString()
                 val email = emailInput.text.toString()
                 val password = passwordInput.text.toString()
-                Log.d("current_thread", "RegisterFragment: ${Thread.currentThread().name}")
                 viewModel.register(name, email, password)
             }
 
             loginText.setOnClickListener { view ->
-                Log.d(TAG, "Login text clicked")
                 parentFragmentManager.beginTransaction().apply {
                     val loginFragment = LoginFragment()
                     replace(R.id.fragment_container, loginFragment)
